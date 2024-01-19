@@ -1,0 +1,70 @@
+Start
+
+Load an MRI Image
+   |
+   V
+Display the Original Image in axes1
+   |
+   V
+Check Selected Brightness Adjustment Option
+   |
+   V
+If 'High Brightness' is selected:
+   |
+   |--> Increase Brightness by 100
+   |
+If 'Low Brightness' is selected:
+   |
+   |--> Decrease Brightness by 100
+   |
+Apply Brightness Adjustment to the Image
+   |
+   V
+Filter the Image using Anisotropic Diffusion
+   |
+   V
+Display the Filtered Image in axes2
+   |
+   V
+Threshold the Filtered Image to Create Binary Image
+   |
+   V
+Morphological Operations on Binary Image:
+   |
+   |--> Label Connected Components
+   |
+   |--> Calculate Component Properties (Solidity, Area, BoundingBox)
+   |
+   |--> Identify High-Density Regions
+   |
+   |--> Find Largest High-Density Region as Potential Tumor
+   |
+   |--> Create Binary Mask (tumor) for Detected Tumor
+   |
+   V
+If a Tumor is Found:
+   |
+   |--> Display Tumor Region in axes3
+   |
+Else:
+   |
+   |--> Show "No Tumor" Message Box
+   |
+Display Original Image with Bounding Box Around Tumor Region in axes4
+   |
+   V
+Erode the Binary Tumor Mask to Remove Artifacts
+   |
+   V
+Display Eroded Tumor Mask in axes5
+   |
+   V
+Subtract Eroded Tumor Mask from Original Binary Tumor Mask
+   |
+   V
+Obtain Tumor Outline (tumorOutline)
+   |
+   V
+Display Tumor Outline in axes6
+
+End
